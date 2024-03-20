@@ -93,15 +93,16 @@ Asume que popCurrent luego de eliminar un elemento se
 posiciona en el elemento anterior.
 */
 
-void eliminaElementos(List* L, int elem) {
-    void* current = first(L); // Suponiendo que first devuelve un puntero al primer elemento de la lista
-    while (current != NULL) {
-        // Verifica si el dato actual es igual a elem y lo elimina
-        if (*(int*)current == elem) {
-            popCurrent(L); // Suponiendo que popCurrent elimina el elemento actual y mueve el cursor al anterior
-        } else {
-            current = next(L); // Suponiendo que next avanza el cursor al siguiente elemento
+void eliminaElementos(List*L, int elem)
+{
+  int*current = first(L);
+  while(current != NULL)
+    {
+      if(*current == elem)
+        {
+          popCurrent(L);
         }
+      current = next(L);
     }
 }
 
@@ -127,7 +128,7 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
-int parentesisBalanceados(char *cadena) {
+int parentesisBalanceados(char *cadena) { return 0; }
   
 
 
