@@ -113,3 +113,30 @@ Wed 20 Mar 2024 08:12:47 PM UTC:
  tests:  2|3
 total_score: 20/70
 1737187
+Wed 20 Mar 2024 08:14:51 PM UTC: 
+ exercises.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘is_empty’:
+exercises.c:140:17: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  140 |     return stack->top == NULL;
+      |                 ^~
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:148:24: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  148 |             push(pila, '(');
+      |                        ^~~
+      |                        |
+      |                        int
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘int’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c: In function ‘is_empty’:
+exercises.c:141:1: error: control reaches end of non-void function [-Werror=return-type]
+  141 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+8d349c7

@@ -136,7 +136,26 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
+int is_empty(Stack* stack) {
+    return stack->top == NULL;
+}
+
 int parentesisBalanceados(char *cadena) {
-   return 0;
+    Stack* pila = create_stack();
+
+    while (*cadena != '\0') {
+        if (*cadena == '(') {
+            push(pila, '(');
+        } else if (*cadena == ')') {
+            if (is_empty(pila)) {
+                return 0; // Hay un paréntesis de cierre sin su paréntesis de apertura correspondiente
+            }
+            pop(pila);
+        }
+        cadena++;
+    }
+
+    // La cadena tiene paréntesis balanceados si la pila está vacía al final
+    return is_empty(pila) ? 1 : 0;
 }
 
