@@ -9,3 +9,12 @@ exercises.c:57:13: error: implicit declaration of function ‘destroy_list’ [-
 cc1: all warnings being treated as errors
 Compilation failed
 b3c2141
+Wed 20 Mar 2024 07:23:15 PM UTC: 
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:57:13: error: implicit declaration of function ‘destroy_list’ [-Werror=implicit-function-declaration]
+   57 |             destroy_list(L); // Liberar la memoria de la lista
+      |             ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f8d69b6
