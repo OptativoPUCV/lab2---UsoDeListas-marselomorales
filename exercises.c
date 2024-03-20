@@ -48,20 +48,20 @@ List* crea_lista() {
     }
 
     for (int i = 1; i <= 10; i++) {
-        int* elemento = (int*)malloc(sizeof(int)); // Reservar memoria para el elemento
+        int* elemento = (int*)malloc(sizeof(int)); 
         if (elemento == NULL) {
             // Manejo de error si malloc() falla
             while (get_size(L) > 0) {
-                free(popBack(L)); // Liberar la memoria de los elementos previamente agregados
+                free(popBack(L)); 
             }
-            free(L); // Liberar la memoria de la lista
+            free(L); 
             return NULL;
         }
-        *elemento = i; // Asignar el valor al elemento
-        pushBack(L, elemento); // Agregar el puntero al elemento en la lista
+        *elemento = i; 
+        pushBack(L, elemento); 
     }
 
-    return L; // Retorna la lista creada
+    return L; 
 }
 
 
