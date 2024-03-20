@@ -109,12 +109,12 @@ void copia_pila(Stack* P1, Stack* P2) {
     Stack* auxiliar = create_stack();
 
     // Vaciar la pila P1 en la pila auxiliar mientras se mantiene el orden
-    while (peek(P1) != NULL) {
+    while (pop(P1) != NULL) {
         push(auxiliar, pop(P1));
     }
 
     // Vaciar la pila auxiliar en la pila P2 para mantener el orden original
-    while (peek(auxiliar) != NULL) {
+    while (pop(auxiliar) != NULL) {
         push(P2, pop(auxiliar));
     }
 
