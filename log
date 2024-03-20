@@ -53,3 +53,17 @@ Wed 20 Mar 2024 07:57:52 PM UTC:
  tests:  2|3
 total_score: 20/70
 87f63a6
+Wed 20 Mar 2024 07:58:57 PM UTC: 
+ exercises.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:111:13: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  111 |     while (!is_empty(P1)) {
+      |             ^~~~~~~~
+exercises.c:121:5: error: implicit declaration of function ‘destroy_stack’ [-Werror=implicit-function-declaration]
+  121 |     destroy_stack(auxiliar);
+      |     ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4583714

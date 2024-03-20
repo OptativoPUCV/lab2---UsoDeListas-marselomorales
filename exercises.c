@@ -105,7 +105,22 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+    Stack* auxiliar = create_stack(); // Crear una pila auxiliar
+
+    // Vaciar la pila P1 en la pila auxiliar mientras se mantiene el orden
+    while (!is_empty(P1)) {
+        push(auxiliar, pop(P1));
+    }
+
+    // Vaciar la pila auxiliar en la pila P2 para mantener el orden original
+    while (!is_empty(auxiliar)) {
+        push(P2, pop(auxiliar));
+    }
+
+    // Liberar la memoria de la pila auxiliar
+    destroy_stack(auxiliar);
 }
+
 
 /*
 Ejercicio 5.
