@@ -42,9 +42,28 @@ Al finalizar retorna la lista creada.
 */
 
 List* crea_lista() {
-   List* L = create_list();
-   return L;
+    List* L = create_list();
+    if (L == NULL) {
+        return NULL; // Manejo de error si create_list() falla
+    }
+
+    for (int i = 1; i <= 10; i++) {
+        int* elemento = (int*)malloc(sizeof(int)); // Reservar memoria para el elemento
+        if (elemento == NULL) {
+            // Manejo de error si malloc() falla
+            while (get_size(L) > 0) {
+                free(popBack(L)); // Liberar la memoria de los elementos previamente agregados
+            }
+            destroy_list(L); // Liberar la memoria de la lista
+            return NULL;
+        }
+        *elemento = i; // Asignar el valor al elemento
+        pushBack(L, elemento); // Agregar el puntero al elemento en la lista
+    }
+
+    return L; // Retorna la lista creada
 }
+
 
 /*
 Ejercicio 2.

@@ -1,0 +1,11 @@
+Wed 20 Mar 2024 07:23:01 PM UTC: 
+ exercises.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:57:13: error: implicit declaration of function ‘destroy_list’ [-Werror=implicit-function-declaration]
+   57 |             destroy_list(L); // Liberar la memoria de la lista
+      |             ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b3c2141
