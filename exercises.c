@@ -54,7 +54,7 @@ List* crea_lista() {
             while (get_size(L) > 0) {
                 free(popBack(L)); // Liberar la memoria de los elementos previamente agregados
             }
-            destroy_list(L); // Liberar la memoria de la lista
+            free(L); // Liberar la memoria de la lista
             return NULL;
         }
         *elemento = i; // Asignar el valor al elemento
@@ -63,6 +63,7 @@ List* crea_lista() {
 
     return L; // Retorna la lista creada
 }
+
 
 
 /*

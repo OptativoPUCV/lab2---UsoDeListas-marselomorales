@@ -18,3 +18,9 @@ exercises.c:57:13: error: implicit declaration of function ‘destroy_list’ [-
 cc1: all warnings being treated as errors
 Compilation failed
 f8d69b6
+Wed 20 Mar 2024 07:24:18 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|4
+total_score: 10/70
+cd7da6a
