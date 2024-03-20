@@ -67,3 +67,20 @@ exercises.c:121:5: error: implicit declaration of function ‘destroy_stack’ [
 cc1: all warnings being treated as errors
 Compilation failed
 4583714
+Wed 20 Mar 2024 08:02:04 PM UTC: 
+ exercises.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:112:12: error: implicit declaration of function ‘peek’ [-Werror=implicit-function-declaration]
+  112 |     while (peek(P1) != NULL) {
+      |            ^~~~
+exercises.c:112:21: error: comparison between pointer and integer [-Werror]
+  112 |     while (peek(P1) != NULL) {
+      |                     ^~
+exercises.c:117:27: error: comparison between pointer and integer [-Werror]
+  117 |     while (peek(auxiliar) != NULL) {
+      |                           ^~
+cc1: all warnings being treated as errors
+Compilation failed
+22e57c5
