@@ -104,27 +104,7 @@ El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
 
-void copia_pila(Stack* P1, Stack* P2) {
-    // Crear una pila auxiliar
-    Stack* auxiliar = create_stack();
-
-    // Vaciar la pila P1 en la pila auxiliar mientras se mantiene el orden
-    void* elemento = pop(P1);
-    while (elemento != NULL) {
-        push(auxiliar, elemento);
-        elemento = pop(P1);
-    }
-
-    // Vaciar la pila auxiliar en la pila P2 para mantener el orden original
-    elemento = pop(auxiliar);
-    while (elemento != NULL) {
-        push(P2, elemento);
-        elemento = pop(auxiliar);
-    }
-
-    // Liberar la memoria de la pila auxiliar
-    free(auxiliar);
-}
+void copia_pila(Stack* P1, Stack* P2) {}
 
 
 
@@ -136,26 +116,5 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 
-int is_empty(Stack* stack) {
-    return stack->top == NULL;
-}
-
-int parentesisBalanceados(char *cadena) {
-    Stack* pila = create_stack();
-
-    while (*cadena != '\0') {
-        if (*cadena == '(') {
-            push(pila, '(');
-        } else if (*cadena == ')') {
-            if (is_empty(pila)) {
-                return 0; // Hay un paréntesis de cierre sin su paréntesis de apertura correspondiente
-            }
-            pop(pila);
-        }
-        cadena++;
-    }
-
-    // La cadena tiene paréntesis balanceados si la pila está vacía al final
-    return is_empty(pila) ? 1 : 0;
-}
+int parentesisBalanceados(char *cadena) {}
 
