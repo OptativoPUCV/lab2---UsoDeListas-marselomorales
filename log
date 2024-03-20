@@ -366,3 +366,14 @@ arraylist.c:37:6: error: ‘pushFront’ defined but not used [-Werror=unused-fu
 cc1: all warnings being treated as errors
 Compilation failed
 5913193
+Wed 20 Mar 2024 08:18:34 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:119:42: error: control reaches end of non-void function [-Werror=return-type]
+  119 | int parentesisBalanceados(char *cadena) {}
+      |                                          ^
+cc1: all warnings being treated as errors
+Compilation failed
+c03a1a5
