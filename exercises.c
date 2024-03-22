@@ -136,10 +136,15 @@ void copia_pila(List* P1, List* P2) {
         pushFront(P1, elemento);
     }
 
-    // Libera la lista auxiliar
+    // Liberar la lista auxiliar elemento por elemento
+    while (get_size(auxiliar) > 0) {
+        popFront(auxiliar); // Elimina el elemento de la lista auxiliar
+    }
+    // Finalmente, libera la memoria asignada a la lista auxiliar
     // (Asumiendo que la lista proporciona una función para liberar la memoria)
-    liberar_lista(auxiliar);
+    liberar(auxiliar);
 }
+
 
 
 /*
