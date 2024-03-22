@@ -142,7 +142,7 @@ void copia_pila(List* P1, List* P2) {
     }
     // Finalmente, libera la memoria asignada a la lista auxiliar
     // (Asumiendo que la lista proporciona una función para liberar la memoria)
-    liberar(auxiliar);
+    free(auxiliar);
 }
 
 
