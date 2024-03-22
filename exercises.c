@@ -114,31 +114,33 @@ El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
 
-void copia_pila(Stack* P1, Stack* P2) {
-    Stack* auxiliar = crear_pila(); // Crea una pila auxiliar
+void copia_pila(List* P1, List* P2) {
+    List* auxiliar = create_list(); // Crea una lista auxiliar
 
     // Mientras la pila P1 no esté vacía
-    while (!esta_vacia(P1)) {
+    while (get_size(P1) > 0) {
         // Obtiene el elemento en la cima de la pila P1
-        Elemento* elemento = pop(P1);
+        void* elemento = popFront(P1);
 
-        // Inserta el elemento en la pila auxiliar y en la pila P2
-        push(P2, elemento);
-        push(auxiliar, elemento);
+        // Inserta el elemento en la lista auxiliar y en la pila P2
+        pushBack(P2, elemento);
+        pushBack(auxiliar, elemento);
     }
 
     // Restaurar la pila P1
-    while (!esta_vacia(auxiliar)) {
-        // Obtiene el elemento en la cima de la pila auxiliar
-        Elemento* elemento = pop(auxiliar);
+    while (get_size(auxiliar) > 0) {
+        // Obtiene el elemento en la cima de la lista auxiliar
+        void* elemento = popBack(auxiliar);
 
         // Inserta el elemento en la pila P1
-        push(P1, elemento);
+        pushFront(P1, elemento);
     }
 
-    // Libera la pila auxiliar
-    liberar_pila(auxiliar);
+    // Libera la lista auxiliar
+    // (Asumiendo que la lista proporciona una función para liberar la memoria)
+    liberar_lista(auxiliar);
 }
+
 
 /*
 Ejercicio 5.

@@ -644,3 +644,15 @@ exercises.c:140:5: error: implicit declaration of function ‘liberar_pila’ [-
 cc1: all warnings being treated as errors
 Compilation failed
 1b4b740
+Fri 22 Mar 2024 12:06:55 AM UTC: 
+ exercises.c | 28 +++++++++++++++-------------
+ 1 file changed, 15 insertions(+), 13 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:141:5: error: implicit declaration of function ‘liberar_lista’; did you mean ‘crea_lista’? [-Werror=implicit-function-declaration]
+  141 |     liberar_lista(auxiliar);
+      |     ^~~~~~~~~~~~~
+      |     crea_lista
+cc1: all warnings being treated as errors
+Compilation failed
+f8b3a4b
