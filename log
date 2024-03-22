@@ -620,3 +620,27 @@ Wed 20 Mar 2024 08:49:29 PM UTC:
  tests:  3|2
 total_score: 40/70
 d83ef22
+Fri 22 Mar 2024 12:04:06 AM UTC: 
+ exercises.c | 23 ++++++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:118:23: error: implicit declaration of function ‘crear_pila’ [-Werror=implicit-function-declaration]
+  118 |     Stack* auxiliar = crear_pila(); // Crea una pila auxiliar
+      |                       ^~~~~~~~~~
+exercises.c:118:23: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+exercises.c:121:13: error: implicit declaration of function ‘esta_vacia’ [-Werror=implicit-function-declaration]
+  121 |     while (!esta_vacia(P1)) {
+      |             ^~~~~~~~~~
+exercises.c:123:9: error: unknown type name ‘Elemento’
+  123 |         Elemento* elemento = pop(P1);
+      |         ^~~~~~~~
+exercises.c:133:9: error: unknown type name ‘Elemento’
+  133 |         Elemento* elemento = pop(auxiliar);
+      |         ^~~~~~~~
+exercises.c:140:5: error: implicit declaration of function ‘liberar_pila’ [-Werror=implicit-function-declaration]
+  140 |     liberar_pila(auxiliar);
+      |     ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1b4b740

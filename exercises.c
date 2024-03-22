@@ -107,8 +107,6 @@ void eliminaElementos(List*L, int elem)
 }
 
 
-
-
 /*
 Ejercicio 4.
 La función copia los punteros de la pila P1 en la pila P2.
@@ -116,10 +114,31 @@ El orden de ambas pilas se debe mantener.
 Puedes usar una pila auxiliar.
 */
 
-void copia_pila(Stack* P1, Stack* P2) {}
+void copia_pila(Stack* P1, Stack* P2) {
+    Stack* auxiliar = crear_pila(); // Crea una pila auxiliar
 
+    // Mientras la pila P1 no esté vacía
+    while (!esta_vacia(P1)) {
+        // Obtiene el elemento en la cima de la pila P1
+        Elemento* elemento = pop(P1);
 
+        // Inserta el elemento en la pila auxiliar y en la pila P2
+        push(P2, elemento);
+        push(auxiliar, elemento);
+    }
 
+    // Restaurar la pila P1
+    while (!esta_vacia(auxiliar)) {
+        // Obtiene el elemento en la cima de la pila auxiliar
+        Elemento* elemento = pop(auxiliar);
+
+        // Inserta el elemento en la pila P1
+        push(P1, elemento);
+    }
+
+    // Libera la pila auxiliar
+    liberar_pila(auxiliar);
+}
 
 /*
 Ejercicio 5.
