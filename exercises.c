@@ -151,13 +151,11 @@ int parentesisBalanceados(char *cadena) {
 
     for (int i = 0; cadena[i] != '\0'; i++) {
         if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
-            // Convertimos el caracter a un puntero de tipo void *
             pushFront(pila, (void *)&cadena[i]);
         } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
             if (get_size(pila) == 0) {
                 return 0;
             }
-            // Obtenemos el último elemento de la pila y lo eliminamos
             char *opening = (char *)popFront(pila);
             if ((*opening == '(' && cadena[i] != ')') ||
                 (*opening == '[' && cadena[i] != ']') ||
