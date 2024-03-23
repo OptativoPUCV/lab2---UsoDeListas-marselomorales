@@ -115,33 +115,25 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(List* P1, List* P2) {
-    List* auxiliar = create_list(); // Crea una lista auxiliar
+    List* auxiliar = create_list(); 
 
-    // Mientras la pila P1 no esté vacía
-    while (get_size(P1) > 0) {
-        // Obtiene el elemento en la cima de la pila P1
+  while (get_size(P1) > 0) {
         void* elemento = popFront(P1);
 
-        // Inserta el elemento en la lista auxiliar y en la pila P2
         pushBack(P2, elemento);
         pushBack(auxiliar, elemento);
     }
 
-    // Restaurar la pila P1
     while (get_size(auxiliar) > 0) {
-        // Obtiene el elemento en la cima de la lista auxiliar
         void* elemento = popBack(auxiliar);
 
-        // Inserta el elemento en la pila P1
         pushFront(P1, elemento);
     }
 
-    // Liberar la lista auxiliar elemento por elemento
     while (get_size(auxiliar) > 0) {
-        popFront(auxiliar); // Elimina el elemento de la lista auxiliar
+        popFront(auxiliar); 
     }
-    // Finalmente, libera la memoria asignada a la lista auxiliar
-    // (Asumiendo que la lista proporciona una función para liberar la memoria)
+   
     free(auxiliar);
 }
 
