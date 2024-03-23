@@ -735,3 +735,9 @@ exercises.c:169:9: error: implicit declaration of function ‘isEmpty’ [-Werro
 cc1: all warnings being treated as errors
 Compilation failed
 69bd65e
+Sat 23 Mar 2024 01:38:11 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+e9c5d60

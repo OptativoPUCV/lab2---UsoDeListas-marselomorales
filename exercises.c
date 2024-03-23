@@ -166,7 +166,7 @@ int parentesisBalanceados(char *cadena) {
             }
         }
     }
-    if (isEmpty(pila)) {
+    if (top(pila)) {
         return 1;
     } else {
         return 0;
