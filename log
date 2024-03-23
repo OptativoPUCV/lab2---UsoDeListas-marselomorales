@@ -753,3 +753,27 @@ Sat 23 Mar 2024 01:42:40 AM UTC:
  tests:  7|1
 total_score: 60/70
 c199ac1
+Sat 23 Mar 2024 02:28:12 AM UTC: 
+ exercises.c | 42 ++++++++++++------------------------------
+ 1 file changed, 12 insertions(+), 30 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:154:37: error: ‘intptr_t’ undeclared (first use in this function)
+  154 |             pushFront(pila, (void*)(intptr_t)cadena[i]);
+      |                                     ^~~~~~~~
+exercises.c:8:1: note: ‘intptr_t’ is defined in header ‘<stdint.h>’; did you forget to ‘#include <stdint.h>’?
+    7 | #include "stack.h"
+  +++ |+#include <stdint.h>
+    8 | 
+exercises.c:154:37: note: each undeclared identifier is reported only once for each function it appears in
+  154 |             pushFront(pila, (void*)(intptr_t)cadena[i]);
+      |                                     ^~~~~~~~
+exercises.c:154:46: error: expected ‘)’ before ‘cadena’
+  154 |             pushFront(pila, (void*)(intptr_t)cadena[i]);
+      |                      ~                       ^~~~~~
+      |                                              )
+exercises.c:159:44: error: expected ‘,’ or ‘;’ before ‘popFront’
+  159 |             char opening = (char)(intptr_t)popFront(pila);
+      |                                            ^~~~~~~~
+Compilation failed
+5ee5313
