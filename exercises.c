@@ -160,7 +160,7 @@ int parentesisBalanceados(char *cadena) {
             // Si el balance es negativo en algún punto, significa que hay más
             // paréntesis de cierre que de apertura, por lo que la cadena no está balanceada
             if (balance < 0) {
-                return 0;
+                return 1;
             }
         }
         // Avanza al siguiente caracter
@@ -168,6 +168,6 @@ int parentesisBalanceados(char *cadena) {
     }
     // Si el balance final es 0, significa que hay la misma cantidad de paréntesis
     // de apertura y cierre, por lo que la cadena está balanceada
-    return (balance == 0) ? 1 : 0;
+    return (balance == 0);
 }
 
