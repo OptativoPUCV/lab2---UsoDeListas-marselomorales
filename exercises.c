@@ -147,27 +147,29 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-    int balance = 0;
-    // Itera sobre cada caracter de la cadena
-    while (*cadena != '\0') {
-        // Si encuentra un paréntesis de apertura, incrementa el balance
-        if (*cadena == '(') {
-            balance++;
-        }
-        // Si encuentra un paréntesis de cierre, decrementa el balance
-        else if (*cadena == ')') {
-            balance--;
-            // Si el balance es negativo en algún punto, significa que hay más
-            // paréntesis de cierre que de apertura, por lo que la cadena no está balanceada
-            if (balance < 0) {
-                return 1;
+    Stack* pila = createStack();
+    int cont = 0;
+
+    for (int i = 0; cadena[i] != '\0'; i++) {
+        cont += 1;
+        if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
+            push(pila, &cadena[i]);
+        } else {
+            if (isEmpty(pila)) {
+                return 0;
+            } else {
+                if (cadena[i] == *((char*)top(pila))) {
+                    pop(pila);
+                } else {
+                    return 0;
+                }
             }
         }
-        // Avanza al siguiente caracter
-        cadena++;
     }
-    // Si el balance final es 0, significa que hay la misma cantidad de paréntesis
-    // de apertura y cierre, por lo que la cadena está balanceada
-    return (balance == 0);
+    if (isEmpty(pila)) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
