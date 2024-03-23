@@ -147,29 +147,46 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-    Stack* pila = create_stack();
-    int cont = 0;
+    // Contadores para cada tipo de paréntesis
+    int contadorParentesis = 0;
+    int contadorCorchetes = 0;
+    int contadorLlaves = 0;
 
+    // Recorremos la cadena de entrada
     for (int i = 0; cadena[i] != '\0'; i++) {
-        cont += 1;
-        if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
-            push(pila, &cadena[i]);
-        } else {
-            if (top(pila)) {
+        // Si encontramos un paréntesis, corchete o llave abierto, incrementamos su respectivo contador
+        if (cadena[i] == '(') {
+            contadorParentesis++;
+        } else if (cadena[i] == '[') {
+            contadorCorchetes++;
+        } else if (cadena[i] == '{') {
+            contadorLlaves++;
+        }
+        // Si encontramos un paréntesis, corchete o llave cerrado, verificamos si el contador correspondiente es mayor que cero
+        // Si no lo es, significa que hay un cierre sin su apertura correspondiente, por lo que la secuencia está desbalanceada
+        else if (cadena[i] == ')') {
+            contadorParentesis--;
+            if (contadorParentesis < 0) {
                 return 0;
-            } else {
-                if (cadena[i] == *((char*)top(pila))) {
-                    pop(pila);
-                } else {
-                    return 0;
-                }
+            }
+        } else if (cadena[i] == ']') {
+            contadorCorchetes--;
+            if (contadorCorchetes < 0) {
+                return 0;
+            }
+        } else if (cadena[i] == '}') {
+            contadorLlaves--;
+            if (contadorLlaves < 0) {
+                return 0;
             }
         }
     }
-    if (top(pila)) {
-        return 0;
+
+    // Verificamos si todos los contadores son cero, lo que indica que todos los paréntesis, corchetes y llaves tienen sus correspondientes cierres
+    if (contadorParentesis == 0 && contadorCorchetes == 0 && contadorLlaves == 0) {
+        return 1; // Los paréntesis están balanceados
     } else {
-        return 1;
+        return 0; // Los paréntesis no están balanceados
     }
 }
 
