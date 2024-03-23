@@ -777,3 +777,9 @@ exercises.c:159:44: error: expected ‘,’ or ‘;’ before ‘popFront’
       |                                            ^~~~~~~~
 Compilation failed
 5ee5313
+Sat 23 Mar 2024 02:29:22 AM UTC: 
+ exercises.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+ tests:  9|0
+total_score: 70/70
+68169b0

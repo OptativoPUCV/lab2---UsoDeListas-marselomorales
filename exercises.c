@@ -151,15 +151,17 @@ int parentesisBalanceados(char *cadena) {
 
     for (int i = 0; cadena[i] != '\0'; i++) {
         if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
-            pushFront(pila, (void*)(intptr_t)cadena[i]);
+            // Convertimos el caracter a un puntero de tipo void *
+            pushFront(pila, (void *)&cadena[i]);
         } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
             if (get_size(pila) == 0) {
                 return 0;
             }
-            char opening = (char)(intptr_t)popFront(pila);
-            if ((opening == '(' && cadena[i] != ')') ||
-                (opening == '[' && cadena[i] != ']') ||
-                (opening == '{' && cadena[i] != '}')) {
+            // Obtenemos el último elemento de la pila y lo eliminamos
+            char *opening = (char *)popFront(pila);
+            if ((*opening == '(' && cadena[i] != ')') ||
+                (*opening == '[' && cadena[i] != ']') ||
+                (*opening == '{' && cadena[i] != '}')) {
                 return 0;
             }
         }
@@ -171,4 +173,3 @@ int parentesisBalanceados(char *cadena) {
         return 0;
     }
 }
-
