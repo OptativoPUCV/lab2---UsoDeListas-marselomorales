@@ -724,3 +724,14 @@ exercises.c:158:17: error: implicit declaration of function ‘isEmpty’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 9f35c4c
+Sat 23 Mar 2024 01:37:59 AM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:169:9: error: implicit declaration of function ‘isEmpty’ [-Werror=implicit-function-declaration]
+  169 |     if (isEmpty(pila)) {
+      |         ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+69bd65e
